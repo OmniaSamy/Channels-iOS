@@ -16,4 +16,11 @@ extension UIColor {
         }
         return color
     }
+    
+    class var loaderBackgroundColor: UIColor {
+        guard let color = UIColor(named: "Loader Background Color") else {
+            return UIColor()
+        }
+        return color
+    }
 }
