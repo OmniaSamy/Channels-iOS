@@ -17,8 +17,8 @@ class ChannelsSessionManager {
     
     private init() {
         let configuration = URLSessionConfiguration.af.default
-        configuration.timeoutIntervalForRequest = 20
-        configuration.timeoutIntervalForResource = 20
+        configuration.timeoutIntervalForRequest = 60
+        configuration.timeoutIntervalForResource = 60
         manager = Session(configuration: configuration)
     }
 }

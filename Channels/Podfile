@@ -9,6 +9,7 @@ target 'Channels' do
   
   pod 'Moya'
   pod 'AlamofireImage'
+  pod 'SwiftMessages'
   
   target 'ChannelsTests' do
     inherit! :search_paths

@@ -41,6 +41,9 @@ extension Comic {
         var url: URL {
             return URL(string: path + "." + `extension`)!
         }
+        var urlString: String {
+            return (path + "." + `extension`)
+        }
     }
 }
 
