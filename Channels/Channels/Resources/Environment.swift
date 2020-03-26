@@ -53,4 +53,3 @@ enum Environment {
         return apiKey
     }()
 }
-
