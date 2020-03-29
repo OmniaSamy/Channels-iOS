@@ -41,6 +41,7 @@
 		0AA91E5B242CC9C7000C52E7 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA91E5A242CC9C7000C52E7 /* HomePresenter.swift */; };
 		0AA91E5D242CCA00000C52E7 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA91E5C242CCA00000C52E7 /* HomeProtocol.swift */; };
 		0AA91E60242CCEE9000C52E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA91E5F242CCEE9000C52E7 /* BaseViewController.swift */; };
+		0AA91E632430A569000C52E7 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA91E622430A569000C52E7 /* PersistenceManager.swift */; };
 		64A92115247D98DDA3BFA7F5 /* Pods_ChannelsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0D3F2ED58EABFC02939AA3 /* Pods_ChannelsTests.framework */; };
 		BC00D09530D83C3F0B0F4A5F /* Pods_Channels_ChannelsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC459BE65FC31AE07EB6A3E /* Pods_Channels_ChannelsUITests.framework */; };
 		F9B57B50215A72FCDEE1EDE1 /* Pods_Channels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA9832E3D522B22F6EBF440 /* Pods_Channels.framework */; };
@@ -106,6 +107,7 @@
 		0AA91E5A242CC9C7000C52E7 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		0AA91E5C242CCA00000C52E7 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		0AA91E5F242CCEE9000C52E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0AA91E622430A569000C52E7 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		0BC459BE65FC31AE07EB6A3E /* Pods_Channels_ChannelsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Channels_ChannelsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		100BDC672CA1900307E164B0 /* Pods-Channels-ChannelsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Channels-ChannelsUITests.release.xcconfig"; path = "Target Support Files/Pods-Channels-ChannelsUITests/Pods-Channels-ChannelsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1C0D3F2ED58EABFC02939AA3 /* Pods_ChannelsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChannelsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,8 +172,8 @@
 		0AA91DE42428B179000C52E7 /* Channels */ = {
 			isa = PBXGroup;
 			children = (
-				0AA91DE72428B179000C52E7 /* SceneDelegate.swift */,
 				0AA91DF32428B17D000C52E7 /* Info.plist */,
+				0AA91DE72428B179000C52E7 /* SceneDelegate.swift */,
 				0AA91E56242CA496000C52E7 /* AppDelegate */,
 				0AA91E15242A3040000C52E7 /* Storyboard */,
 				0AA91E5E242CCED5000C52E7 /* Base */,
@@ -180,6 +182,7 @@
 				0AA91E1E242A33C5000C52E7 /* NetworkServices */,
 				0AA91E28242A3524000C52E7 /* Models */,
 				0AA91E16242A3082000C52E7 /* Resources */,
+				0AA91E612430A54E000C52E7 /* Services */,
 				0AA91E1D242A338E000C52E7 /* Scenes */,
 			);
 			path = Channels;
@@ -345,6 +348,14 @@
 				0AA91E5F242CCEE9000C52E7 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		0AA91E612430A54E000C52E7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0AA91E622430A569000C52E7 /* PersistenceManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		EE33548928885FC7B45A6D85 /* Pods */ = {
@@ -626,6 +637,7 @@
 				0AA91E2A242A3545000C52E7 /* MarvelService.swift in Sources */,
 				0AA91E22242A340D000C52E7 /* NetworkError.swift in Sources */,
 				0AA91E5B242CC9C7000C52E7 /* HomePresenter.swift in Sources */,
+				0AA91E632430A569000C52E7 /* PersistenceManager.swift in Sources */,
 				0AA91E2E242A35A5000C52E7 /* Comic.swift in Sources */,
 				0AA91E58242CA4AE000C52E7 /* AppDelegate+Extension.swift in Sources */,
 				0AA91E24242A3433000C52E7 /* ChannelsSessionManager.swift in Sources */,
