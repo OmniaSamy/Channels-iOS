@@ -34,7 +34,7 @@ extension HomeViewController {
     
     private func setUpScreen() {
         comicTableView.dataSource = self
-        comicTableView.register(UINib (nibName: ComicCell.className, bundle: nil),
+        comicTableView.register(UINib(nibName: ComicCell.className, bundle: nil),
                                 forCellReuseIdentifier: ComicCell.className)
         comicTableView.estimatedRowHeight = 130
     }
@@ -53,7 +53,11 @@ extension HomeViewController: UITableViewDataSource {
                 return UITableViewCell()
         }
         
-        cell.bind(comic: comicPresenter.getComicAtIndex(index: indexPath)!)
+        guard let comic = comicPresenter.getComicAtIndex(index: indexPath) else {
+            return UITableViewCell()
+        }
+        
+        cell.bind(comic: comic)
         return cell
     }
     

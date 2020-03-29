@@ -11,6 +11,10 @@ import Moya
 
 class NetworkManager {
     
+    typealias MoyaCompletion = Result<Moya.Response, MoyaError>
+    typealias NetworkCompletion<T: Codable> = (_ result: Swift.Result<MarvelResults<T>, NetworkError>,
+        _ statusCode: Int?) -> Void
+    
     static var shared: NetworkManager!
     var marvelProvider: MoyaProvider<MarvelService>!
     

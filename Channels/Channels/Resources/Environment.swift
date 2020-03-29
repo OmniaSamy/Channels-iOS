@@ -8,6 +8,7 @@
 
 import Foundation
 
+// swiftlint:disable all
 enum Environment {
     
     // MARK: - Keys

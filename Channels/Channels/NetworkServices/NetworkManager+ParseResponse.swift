@@ -11,7 +11,7 @@ import Moya
 
 extension NetworkManager {
     
-    func parseResponse<T:Codable>(moyaResult: Result<Moya.Response, MoyaError>, completion: @escaping(_ result: Swift.Result<MarvelResults<T>, NetworkError>,_ statusCode: Int?) -> Void){
+    func parseResponse<T: Codable>(moyaResult: MoyaCompletion, completion: @escaping(NetworkCompletion<T>)) {
         
         switch moyaResult {
         case .success(let response):

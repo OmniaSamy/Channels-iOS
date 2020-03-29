@@ -8,6 +8,7 @@
 
 import Foundation
 
+// swiftlint:disable all
 struct Comic: Codable {
     
     let id: Int

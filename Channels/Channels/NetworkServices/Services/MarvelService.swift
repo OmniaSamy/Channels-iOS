@@ -39,9 +39,9 @@ extension MarvelService: TargetType {
     
     var task: Task {
         
-        let ts = "\(Date().timeIntervalSince1970)"
-        let hash = (ts + Environment.privateKey + Environment.publicKey).md5
-        let authParams = ["apikey": Environment.publicKey, "ts": ts, "hash": hash]
+        let tsDate = "\(Date().timeIntervalSince1970)"
+        let hash = (tsDate + Environment.privateKey + Environment.publicKey).md5
+        let authParams = ["apikey": Environment.publicKey, "ts": tsDate, "hash": hash]
         
         switch self {
         case .comics:
@@ -57,7 +57,7 @@ extension MarvelService: TargetType {
         }
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return nil
     }
 }

@@ -12,8 +12,8 @@ public func + <KeyType, ValueType> (left: [KeyType: ValueType], right: [KeyType:
     
     var out = left
     
-    for (k, v) in right {
-        out.updateValue(v, forKey: k)
+    for (kType, vType) in right {
+        out.updateValue(vType, forKey: kType)
     }
     
     return out

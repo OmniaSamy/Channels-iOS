@@ -9,7 +9,7 @@
 import Foundation
 
 enum DefaulKeys: String {
-    case dataKey = "dataKey"
+    case dataKey = "Key"
 }
 
 class PersistenceManager {
