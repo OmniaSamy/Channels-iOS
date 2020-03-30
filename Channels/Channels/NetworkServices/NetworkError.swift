@@ -8,6 +8,7 @@
 
 import Foundation
 import Moya
+import Alamofire
 
 enum `Type`:String, Codable {
     case business
@@ -29,6 +30,11 @@ struct NetworkError: Error, Codable {
         
         self.code = error.errorCode
         self.message = error.errorDescription
+        
+        if case let MoyaError.underlying(underlying, _) = error ,
+            case let AFError.sessionTaskFailed(error: urlErrorDomain) = underlying {
+            self.message = urlErrorDomain.localizedDescription
+        }
     }
 }
 
