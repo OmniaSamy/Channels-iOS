@@ -8,6 +8,7 @@
 
 import XCTest
 
+// swiftlint:disable all
 class ChannelsUITests: XCTestCase {
 
     override func setUp() {

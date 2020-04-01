@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Channels" customModuleProvider="target">
+            <connections>
+                <outlet property="comicTableView" destination="HZe-lR-T1e" id="tc2-9P-22n"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OmD-uT-t9Q" userLabel="Container View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HZe-lR-T1e">
+                            <rect key="frame" x="4" y="4" width="367" height="663"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="HZe-lR-T1e" secondAttribute="trailing" constant="4" id="Oj7-BF-BXf"/>
+                        <constraint firstItem="HZe-lR-T1e" firstAttribute="leading" secondItem="OmD-uT-t9Q" secondAttribute="leading" constant="4" id="mVW-uh-4ow"/>
+                        <constraint firstItem="HZe-lR-T1e" firstAttribute="top" secondItem="OmD-uT-t9Q" secondAttribute="top" constant="4" id="xFO-3N-2ee"/>
+                        <constraint firstAttribute="bottom" secondItem="HZe-lR-T1e" secondAttribute="bottom" id="zkX-VZ-4ss"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OmD-uT-t9Q" secondAttribute="trailing" id="5WX-Lr-VRy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OmD-uT-t9Q" secondAttribute="bottom" id="6LL-7A-S2O"/>
+                <constraint firstItem="OmD-uT-t9Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qeJ-vj-pg4"/>
+                <constraint firstItem="OmD-uT-t9Q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tr9-Rn-gic"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="129"/>
+        </view>
+    </objects>
+</document>
