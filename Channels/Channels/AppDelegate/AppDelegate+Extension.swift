@@ -13,9 +13,8 @@ extension AppDelegate {
     func setRoot() {
         if #available(iOS 13.0, *) { } else {
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            let homeVC = HomeViewController()
-            let mainNavigationController = AppNavigationController(rootViewController: homeVC)
-            self.window?.rootViewController = mainNavigationController
+            let splashVC = SplashViewController()
+            self.window?.rootViewController = splashVC
             self.window?.makeKeyAndVisible()
         }
     }

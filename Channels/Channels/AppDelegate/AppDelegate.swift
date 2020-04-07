@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setRoot()
         initNetwork()
-        sleep(3)
         return true
     }
     

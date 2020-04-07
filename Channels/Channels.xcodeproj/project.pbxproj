@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A6F8FCE243C7F8400305C37 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6F8FD0243C7F8400305C37 /* SplashViewController.xib */; };
+		0A6F8FD9243CA5BF00305C37 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6F8FD8243CA5BF00305C37 /* Localized.swift */; };
+		0A6F8FDB243CA79400305C37 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0A6F8FDA243CA79400305C37 /* swiftgen.yml */; };
+		0A6F8FDC243CA89C00305C37 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A6F8FDE243CA89C00305C37 /* Localizable.strings */; };
+		0A6F8FE1243CAA4000305C37 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6F8FE0243CAA4000305C37 /* Assets.swift */; };
+		0A769C802435DABC00650350 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A769C7E2435DABC00650350 /* SplashViewController.swift */; };
 		0AA91DE62428B179000C52E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA91DE52428B179000C52E7 /* AppDelegate.swift */; };
 		0AA91DE82428B179000C52E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA91DE72428B179000C52E7 /* SceneDelegate.swift */; };
 		0AA91DEF2428B17D000C52E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA91DEE2428B17D000C52E7 /* Assets.xcassets */; };
@@ -65,6 +71,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A6F8FCF243C7F8400305C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SplashViewController.xib; sourceTree = "<group>"; };
+		0A6F8FD1243C7F8C00305C37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SplashViewController.strings; sourceTree = "<group>"; };
+		0A6F8FD8243CA5BF00305C37 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		0A6F8FDA243CA79400305C37 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
+		0A6F8FDD243CA89C00305C37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0A6F8FE0243CAA4000305C37 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		0A769C7E2435DABC00650350 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		0AA91DE22428B179000C52E7 /* Channels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Channels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA91DE52428B179000C52E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AA91DE72428B179000C52E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +160,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A6F8FD5243CA26600305C37 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				0A6F8FDE243CA89C00305C37 /* Localizable.strings */,
+				0A6F8FD8243CA5BF00305C37 /* Localized.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		0A6F8FDF243CAA0000305C37 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0AA91DEE2428B17D000C52E7 /* Assets.xcassets */,
+				0A6F8FE0243CAA4000305C37 /* Assets.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		0A769C7C2435DA7100650350 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0AA91E4E242CA30C000C52E7 /* Cell */,
+				0AA91E49242CA2E9000C52E7 /* HomeViewController.swift */,
+				0AA91E4A242CA2E9000C52E7 /* HomeViewController.xib */,
+				0AA91E5A242CC9C7000C52E7 /* HomePresenter.swift */,
+				0AA91E5C242CCA00000C52E7 /* HomeProtocol.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0A769C7D2435DAA100650350 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				0A769C7E2435DABC00650350 /* SplashViewController.swift */,
+				0A6F8FD0243C7F8400305C37 /* SplashViewController.xib */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		0AA91DD92428B179000C52E7 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				0AA91DF32428B17D000C52E7 /* Info.plist */,
+				0A6F8FDA243CA79400305C37 /* swiftgen.yml */,
 				0AA91DE72428B179000C52E7 /* SceneDelegate.swift */,
 				0AA91E56242CA496000C52E7 /* AppDelegate */,
 				0AA91E15242A3040000C52E7 /* Storyboard */,
@@ -217,9 +270,10 @@
 		0AA91E16242A3082000C52E7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0A6F8FDF243CAA0000305C37 /* Assets */,
+				0A6F8FD5243CA26600305C37 /* Localization */,
 				0AA91E3A242A8DF4000C52E7 /* Colors */,
 				0AA91E17242A30AB000C52E7 /* Configurations */,
-				0AA91DEE2428B17D000C52E7 /* Assets.xcassets */,
 				0AA91E1A242A310D000C52E7 /* Environment.swift */,
 				0AA91E1C242A31E8000C52E7 /* Bridging.h */,
 			);
@@ -237,11 +291,8 @@
 		0AA91E1D242A338E000C52E7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				0AA91E4E242CA30C000C52E7 /* Cell */,
-				0AA91E49242CA2E9000C52E7 /* HomeViewController.swift */,
-				0AA91E4A242CA2E9000C52E7 /* HomeViewController.xib */,
-				0AA91E5A242CC9C7000C52E7 /* HomePresenter.swift */,
-				0AA91E5C242CCA00000C52E7 /* HomeProtocol.swift */,
+				0A769C7D2435DAA100650350 /* Splash */,
+				0A769C7C2435DA7100650350 /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -394,6 +445,8 @@
 				0AA91DE02428B179000C52E7 /* Resources */,
 				6C4B289D9079CA8827E1DAD7 /* [CP] Embed Pods Frameworks */,
 				0A6493072430B46C00363CD3 /* Swift Lint Run Script */,
+				0A6F8FC82439BC5A00305C37 /* BartyCrouch Run Script */,
+				0A6F8FD2243C9A0100305C37 /* swiftGen  Run Script */,
 			);
 			buildRules = (
 			);
@@ -492,10 +545,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AA91DF22428B17D000C52E7 /* LaunchScreen.storyboard in Resources */,
+				0A6F8FCE243C7F8400305C37 /* SplashViewController.xib in Resources */,
 				0AA91E52242CA364000C52E7 /* ComicCell.xib in Resources */,
 				0AA91E39242A8DBD000C52E7 /* Colors.xcassets in Resources */,
+				0A6F8FDC243CA89C00305C37 /* Localizable.strings in Resources */,
 				0AA91E4C242CA2E9000C52E7 /* HomeViewController.xib in Resources */,
 				0AA91DEF2428B17D000C52E7 /* Assets.xcassets in Resources */,
+				0A6F8FDB243CA79400305C37 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +611,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		0A6F8FC82439BC5A00305C37 /* BartyCrouch Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "BartyCrouch Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which bartycrouch > /dev/null; then\n    bartycrouch update -x\n    bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed, download it from https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
+		};
+		0A6F8FD2243C9A0100305C37 /* swiftGen  Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "swiftGen  Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftgen\n";
 		};
 		36207C681A2A16F8F1326EC1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -641,6 +733,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A769C802435DABC00650350 /* SplashViewController.swift in Sources */,
 				0AA91E33242A360C000C52E7 /* String+MD5.swift in Sources */,
 				0AA91E35242A361C000C52E7 /* Dictionary+Extension.swift in Sources */,
 				0AA91E30242A35BA000C52E7 /* MarvelResponse.swift in Sources */,
@@ -665,8 +758,10 @@
 				0AA91DE62428B179000C52E7 /* AppDelegate.swift in Sources */,
 				0AA91E37242A3630000C52E7 /* Date+ISO8601.swift in Sources */,
 				0AA91DE82428B179000C52E7 /* SceneDelegate.swift in Sources */,
+				0A6F8FD9243CA5BF00305C37 /* Localized.swift in Sources */,
 				0AA91E5D242CCA00000C52E7 /* HomeProtocol.swift in Sources */,
 				0AA91E55242CA3F9000C52E7 /* AppNavigationController.swift in Sources */,
+				0A6F8FE1243CAA4000305C37 /* Assets.swift in Sources */,
 				0AA91E48242B4684000C52E7 /* LoaderProtocol.swift in Sources */,
 				0AA91E3E242B4165000C52E7 /* UIColor+app.swift in Sources */,
 			);
@@ -704,6 +799,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0A6F8FD0243C7F8400305C37 /* SplashViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A6F8FCF243C7F8400305C37 /* Base */,
+				0A6F8FD1243C7F8C00305C37 /* en */,
+			);
+			name = SplashViewController.xib;
+			sourceTree = "<group>";
+		};
+		0A6F8FDE243CA89C00305C37 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A6F8FDD243CA89C00305C37 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		0AA91DF02428B17D000C52E7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

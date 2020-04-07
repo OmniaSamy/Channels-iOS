@@ -29,7 +29,7 @@ extension BaseViewController {
         view.configureDropShadow()
         var config = SwiftMessages.Config()
         config.presentationContext = .window(windowLevel: .statusBar)
-        view.configureContent(title: "error", body: errorMessage)
+        view.configureContent(title: L10n.error, body: errorMessage)
         view.layoutMarginAdditions = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         (view.backgroundView as? CornerRoundingView)?.cornerRadius = 8
         SwiftMessages.show(config: config, view: view)
