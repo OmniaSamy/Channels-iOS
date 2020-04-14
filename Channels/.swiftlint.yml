@@ -51,7 +51,7 @@ notification_center_detachment: error
 warning_threshold: 12
 
 line_length:
-  error: 120
+  error: 130
   ignores_comments: true
   
 # they can set both implicitly with an array
