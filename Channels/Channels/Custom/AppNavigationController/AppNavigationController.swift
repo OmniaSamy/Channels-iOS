@@ -16,25 +16,20 @@ class AppNavigationController: UINavigationController {
         super.viewDidLoad()
         
         // set navigation bar design
-        self.navigationBar.barTintColor = UIColor.primaryColor
-        self.navigationBar.isTranslucent = true
-        
-//        self.navigationBar.shadowImage = UIImage()
-//        self.navigationBar.layer.masksToBounds = false
-        
-//        self.navigationBar.tintColor = UIColor.black
         self.navigationBar.prefersLargeTitles = true
         
         if #available(iOS 13.0, *) {
             let coloredAppearance = UINavigationBarAppearance()
             coloredAppearance.configureWithOpaqueBackground()
             coloredAppearance.backgroundColor = .primaryColor
-            coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.secondaryLabel]
-            coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.secondaryLabel]
+            coloredAppearance.shadowColor = nil
+            coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.titleColor]
+            coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.titleColor]
             self.navigationBar.standardAppearance = coloredAppearance
             self.navigationBar.scrollEdgeAppearance = coloredAppearance
         } else {
             // Fallback on earlier versions
+            self.navigationBar.barTintColor = UIColor.primaryColor
         }
     }
 }

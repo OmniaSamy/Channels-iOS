@@ -27,6 +27,10 @@ class ChannelHomeViewController: UIViewController {
         channelCollectionView.register(SectionHeader.self,
                                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                        withReuseIdentifier: SectionHeader.className)
+        
+        channelCollectionView.register(SectionHeaderTitle.self,
+                                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                       withReuseIdentifier: SectionHeaderTitle.className)
     }
 }
 
@@ -38,9 +42,10 @@ extension ChannelHomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if section == 2 {
+        switch section {
+        case 2:
             return 8
-        } else {
+        default:
             return 1
         }
     }
@@ -48,29 +53,48 @@ extension ChannelHomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        var cell = UICollectionViewCell()
-        
         if indexPath.section == 2 {
             
-            cell = channelCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.className,
-                                                             for: indexPath)
+            let  cell = channelCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.className,
+                                                                  for: indexPath) as? CategoryCell
+            return cell ?? UICollectionViewCell()
         } else {
-            cell = channelCollectionView.dequeueReusableCell(withReuseIdentifier: ChannelCell.className,
-                                                             for: indexPath)
+            let cell = channelCollectionView.dequeueReusableCell(withReuseIdentifier: ChannelCell.className,
+                                                                 for: indexPath) as? ChannelCell
+            cell?.bind()
+            return cell ?? UICollectionViewCell()
         }
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let headerView = channelCollectionView
-            .dequeueReusableSupplementaryView(ofKind: kind,
-                                              withReuseIdentifier: SectionHeader.className,
-                                              for: indexPath)
-        return headerView
+        switch indexPath.section {
+        case 0:
+            
+            let  headerView = channelCollectionView
+                .dequeueReusableSupplementaryView(ofKind: kind,
+                                                  withReuseIdentifier: SectionHeaderTitle.className,
+                                                  for: indexPath) as? SectionHeaderTitle
+            headerView?.confuigureDesignWithOutSeparator()
+            return headerView ?? UICollectionReusableView()
+        case 2:
+            
+            let  headerView = channelCollectionView
+                .dequeueReusableSupplementaryView(ofKind: kind,
+                                                  withReuseIdentifier: SectionHeaderTitle.className,
+                                                  for: indexPath) as? SectionHeaderTitle
+            headerView?.confuigureDesign()
+            return headerView ?? UICollectionReusableView()
+            
+        default:
+            let headerView = channelCollectionView
+                .dequeueReusableSupplementaryView(ofKind: kind,
+                                                  withReuseIdentifier: SectionHeader.className,
+                                                  for: indexPath)
+            return headerView
+        }
     }
 }
 
@@ -93,10 +117,11 @@ extension ChannelHomeViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        if section == 2 {
+        switch section {
+        case 2:
             return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        } else {
-            return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        default:
+            return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         }
     }
     
@@ -104,6 +129,11 @@ extension ChannelHomeViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        return CGSize(width: collectionView.frame.size.width, height: 70)
+        switch section {
+        case 0, 2:
+            return CGSize(width: collectionView.frame.size.width, height: 50)
+        default:
+            return CGSize(width: collectionView.frame.size.width, height: 105)
+        }
     }
 }

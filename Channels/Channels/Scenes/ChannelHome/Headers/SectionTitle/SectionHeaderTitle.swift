@@ -1,19 +1,21 @@
 //
-//  SectionHeader.swift
+//  SectionHeaderTitle.swift
 //  Channels
 //
-//  Created by Omnia Samy on 4/12/20.
+//  Created by Omnia Samy on 4/19/20.
 //  Copyright © 2020 Omnia Samy. All rights reserved.
 //
 
 import UIKit
 
-class SectionHeader: UICollectionReusableView {
+class SectionHeaderTitle: UICollectionReusableView {
     
-    let nibName = "SectionHeader"
+    let nibName = "SectionHeaderTitle"
     private var contentView: UIView!
     
-    @IBOutlet private weak var stopTimeDetailsLabel: UILabel!
+    @IBOutlet private weak var separatorView: UIView!
+    
+    @IBOutlet private weak var topPin: NSLayoutConstraint!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +29,7 @@ class SectionHeader: UICollectionReusableView {
     
     func xibSetup() {
         
-        contentView = loadViewFromNib()
+        contentView = self.loadViewFromNib(nibName: nibName)
         // use bounds not frame or it'll be offset
         contentView?.frame = self.bounds
         // Adding custom subview on top of our view
@@ -36,9 +38,13 @@ class SectionHeader: UICollectionReusableView {
         self.addSubview(contentView)
     }
     
-    func loadViewFromNib() -> UIView? {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: nibName, bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first as? UIView
+    func confuigureDesignWithOutSeparator() {
+        separatorView.isHidden = true
+        topPin.constant = 0
+    }
+    
+    func confuigureDesign() {
+        separatorView.isHidden = false
+        topPin.constant = 20
     }
 }

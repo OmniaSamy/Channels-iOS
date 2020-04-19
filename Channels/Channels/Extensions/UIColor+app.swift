@@ -23,4 +23,11 @@ extension UIColor {
         }
         return color
     }
+    
+    class var titleColor: UIColor {
+        guard let color = UIColor(named: "Title Color") else {
+            return UIColor()
+        }
+        return color
+    }
 }

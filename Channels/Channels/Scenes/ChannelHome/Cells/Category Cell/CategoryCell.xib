@@ -21,13 +21,13 @@
                         <rect key="frame" x="5" y="6" width="310" height="58"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlO-UV-dZi">
-                                <rect key="frame" x="121" y="18.5" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="116.5" y="18.5" width="77.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.23137254901960785" green="0.23921568627450979" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YlO-UV-dZi" firstAttribute="centerY" secondItem="T0k-Dt-OSh" secondAttribute="centerY" id="KNH-Ts-53X"/>
                             <constraint firstItem="YlO-UV-dZi" firstAttribute="centerX" secondItem="T0k-Dt-OSh" secondAttribute="centerX" id="Wj5-Mj-Go6"/>

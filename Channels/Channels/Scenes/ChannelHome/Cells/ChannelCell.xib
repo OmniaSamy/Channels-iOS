@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +23,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AuJ-h6-WDz">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="Primary Color"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="52f-Vm-kdk">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -31,6 +32,7 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                         </subviews>
+                        <color key="backgroundColor" name="Primary Color"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="AuJ-h6-WDz" secondAttribute="bottom" id="HNo-uX-hBA"/>
                             <constraint firstItem="AuJ-h6-WDz" firstAttribute="top" secondItem="oWR-nn-b6p" secondAttribute="top" id="U8H-6F-m4b"/>
@@ -53,4 +55,9 @@
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="Primary Color">
+            <color red="0.14117647058823529" green="0.15294117647058825" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

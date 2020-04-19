@@ -58,6 +58,9 @@
 		0AA91E5D242CCA00000C52E7 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA91E5C242CCA00000C52E7 /* HomeProtocol.swift */; };
 		0AA91E60242CCEE9000C52E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA91E5F242CCEE9000C52E7 /* BaseViewController.swift */; };
 		0AA91E632430A569000C52E7 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA91E622430A569000C52E7 /* PersistenceManager.swift */; };
+		0AB5940D244C61E500FAB44A /* SectionHeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5940C244C61E500FAB44A /* SectionHeaderTitle.swift */; };
+		0AB5940F244C620200FAB44A /* SectionHeaderTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AB5940E244C620200FAB44A /* SectionHeaderTitle.xib */; };
+		0AB59411244C63DE00FAB44A /* UIViewExtension+nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB59410244C63DE00FAB44A /* UIViewExtension+nib.swift */; };
 		64A92115247D98DDA3BFA7F5 /* Pods_ChannelsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0D3F2ED58EABFC02939AA3 /* Pods_ChannelsTests.framework */; };
 		BC00D09530D83C3F0B0F4A5F /* Pods_Channels_ChannelsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC459BE65FC31AE07EB6A3E /* Pods_Channels_ChannelsUITests.framework */; };
 		F9B57B50215A72FCDEE1EDE1 /* Pods_Channels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA9832E3D522B22F6EBF440 /* Pods_Channels.framework */; };
@@ -141,6 +144,9 @@
 		0AA91E5C242CCA00000C52E7 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		0AA91E5F242CCEE9000C52E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0AA91E622430A569000C52E7 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		0AB5940C244C61E500FAB44A /* SectionHeaderTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderTitle.swift; sourceTree = "<group>"; };
+		0AB5940E244C620200FAB44A /* SectionHeaderTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderTitle.xib; sourceTree = "<group>"; };
+		0AB59410244C63DE00FAB44A /* UIViewExtension+nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewExtension+nib.swift"; sourceTree = "<group>"; };
 		0BC459BE65FC31AE07EB6A3E /* Pods_Channels_ChannelsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Channels_ChannelsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		100BDC672CA1900307E164B0 /* Pods-Channels-ChannelsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Channels-ChannelsUITests.release.xcconfig"; path = "Target Support Files/Pods-Channels-ChannelsUITests/Pods-Channels-ChannelsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1C0D3F2ED58EABFC02939AA3 /* Pods_ChannelsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChannelsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,8 +198,8 @@
 		0A56A27C2441C197004323A8 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				0A56A27D2442FFFD004323A8 /* SectionHeader.xib */,
-				0A56A27F2443000D004323A8 /* SectionHeader.swift */,
+				0AB5940B244C61BC00FAB44A /* SectionTitle */,
+				0AB5940A244C61AC00FAB44A /* SectionSeparator */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 				0AA91E3D242B4165000C52E7 /* UIColor+app.swift */,
 				0AA91E3F242B41F0000C52E7 /* UIImageExtension.swift */,
 				0AA91E41242B4340000C52E7 /* NSObject+Extension.swift */,
+				0AB59410244C63DE00FAB44A /* UIViewExtension+nib.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -477,6 +484,24 @@
 				0AA91E622430A569000C52E7 /* PersistenceManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		0AB5940A244C61AC00FAB44A /* SectionSeparator */ = {
+			isa = PBXGroup;
+			children = (
+				0A56A27D2442FFFD004323A8 /* SectionHeader.xib */,
+				0A56A27F2443000D004323A8 /* SectionHeader.swift */,
+			);
+			path = SectionSeparator;
+			sourceTree = "<group>";
+		};
+		0AB5940B244C61BC00FAB44A /* SectionTitle */ = {
+			isa = PBXGroup;
+			children = (
+				0AB5940C244C61E500FAB44A /* SectionHeaderTitle.swift */,
+				0AB5940E244C620200FAB44A /* SectionHeaderTitle.xib */,
+			);
+			path = SectionTitle;
 			sourceTree = "<group>";
 		};
 		EE33548928885FC7B45A6D85 /* Pods */ = {
@@ -623,6 +648,7 @@
 				0AA91E39242A8DBD000C52E7 /* Colors.xcassets in Resources */,
 				0A6F8FDC243CA89C00305C37 /* Localizable.strings in Resources */,
 				0AA91E4C242CA2E9000C52E7 /* HomeViewController.xib in Resources */,
+				0AB5940F244C620200FAB44A /* SectionHeaderTitle.xib in Resources */,
 				0A56A27E2442FFFD004323A8 /* SectionHeader.xib in Resources */,
 				0A6F8FEB243DD6DC00305C37 /* EpisodeCell.xib in Resources */,
 				0AA91DEF2428B17D000C52E7 /* Assets.xcassets in Resources */,
@@ -837,8 +863,10 @@
 				0AA91E37242A3630000C52E7 /* Date+ISO8601.swift in Sources */,
 				0AA91DE82428B179000C52E7 /* SceneDelegate.swift in Sources */,
 				0A6F8FD9243CA5BF00305C37 /* Localized.swift in Sources */,
+				0AB5940D244C61E500FAB44A /* SectionHeaderTitle.swift in Sources */,
 				0AA91E5D242CCA00000C52E7 /* HomeProtocol.swift in Sources */,
 				0A6F8FE5243DC3D100305C37 /* ChannelHomeViewController.swift in Sources */,
+				0AB59411244C63DE00FAB44A /* UIViewExtension+nib.swift in Sources */,
 				0A56A27A2441BE44004323A8 /* ChannelCell.swift in Sources */,
 				0AA91E55242CA3F9000C52E7 /* AppNavigationController.swift in Sources */,
 				0A6F8FE1243CAA4000305C37 /* Assets.swift in Sources */,
@@ -1029,7 +1057,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2C86JD592M;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Channels/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1049,7 +1077,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2C86JD592M;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Channels/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
