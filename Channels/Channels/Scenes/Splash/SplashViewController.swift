@@ -44,7 +44,7 @@ class SplashViewController: UIViewController {
     func setRoot() {
         
         let homeVC = ChannelHomeViewController()
-            //HomeViewController()
+        //HomeViewController()
         let mainNavigationController = AppNavigationController(rootViewController: homeVC)
         
         //        let window = UIApplication.shared.windows.first

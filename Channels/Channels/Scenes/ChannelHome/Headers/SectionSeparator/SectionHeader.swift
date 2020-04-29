@@ -13,6 +13,10 @@ class SectionHeader: UICollectionReusableView {
     let nibName = "SectionHeader"
     private var contentView: UIView!
     
+    @IBOutlet private weak var sectionImageView: UIImageView!
+    @IBOutlet private weak var sectionTitleLabel: UILabel!
+    @IBOutlet private weak var sectionSubTitleLabel: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
@@ -32,5 +36,11 @@ class SectionHeader: UICollectionReusableView {
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentView.translatesAutoresizingMaskIntoConstraints = true
         self.addSubview(contentView)
+    }
+    
+    func bind(channel: ChannelModel) {
+        sectionImageView.loadImageFromUrl(urlString: channel.iconAsset?.thumbnailUrl ?? "", placeHolderImage: nil)
+        sectionTitleLabel.text = channel.title
+        sectionSubTitleLabel.text = String(channel.mediaCount ?? 0)
     }
 }

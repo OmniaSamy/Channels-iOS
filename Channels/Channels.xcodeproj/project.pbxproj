@@ -23,6 +23,18 @@
 		0A6F8FEA243DD6DC00305C37 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6F8FE8243DD6DC00305C37 /* EpisodeCell.swift */; };
 		0A6F8FEB243DD6DC00305C37 /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6F8FE9243DD6DC00305C37 /* EpisodeCell.xib */; };
 		0A769C802435DABC00650350 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A769C7E2435DABC00650350 /* SplashViewController.swift */; };
+		0A955260245818A20025233C /* Category.Success.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A95525D245818A10025233C /* Category.Success.json */; };
+		0A955261245818A20025233C /* Channels.Success.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A95525E245818A10025233C /* Channels.Success.json */; };
+		0A955262245818A20025233C /* Episodes.Success.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A95525F245818A10025233C /* Episodes.Success.json */; };
+		0A955265245819600025233C /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A955264245819600025233C /* NetworkResponse.swift */; };
+		0A955267245819F20025233C /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A955266245819F20025233C /* ListData.swift */; };
+		0A95526924581D910025233C /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A95526824581D910025233C /* Bundle+Extension.swift */; };
+		0A95526B24581FFF0025233C /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A95526A24581FFF0025233C /* CategoryModel.swift */; };
+		0A95526D245822870025233C /* ChannelHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A95526C245822870025233C /* ChannelHomePresenter.swift */; };
+		0A95526F24582E660025233C /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A95526E24582E660025233C /* MediaModel.swift */; };
+		0A9552712458444E0025233C /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9552702458444E0025233C /* ChannelModel.swift */; };
+		0A9552752458549A0025233C /* SeriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9552732458549A0025233C /* SeriesCell.swift */; };
+		0A9552762458549A0025233C /* SeriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9552742458549A0025233C /* SeriesCell.xib */; };
 		0AA91DE62428B179000C52E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA91DE52428B179000C52E7 /* AppDelegate.swift */; };
 		0AA91DE82428B179000C52E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA91DE72428B179000C52E7 /* SceneDelegate.swift */; };
 		0AA91DEF2428B17D000C52E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA91DEE2428B17D000C52E7 /* Assets.xcassets */; };
@@ -101,6 +113,18 @@
 		0A6F8FE8243DD6DC00305C37 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		0A6F8FE9243DD6DC00305C37 /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
 		0A769C7E2435DABC00650350 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		0A95525D245818A10025233C /* Category.Success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Category.Success.json; sourceTree = "<group>"; };
+		0A95525E245818A10025233C /* Channels.Success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Channels.Success.json; sourceTree = "<group>"; };
+		0A95525F245818A10025233C /* Episodes.Success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Episodes.Success.json; sourceTree = "<group>"; };
+		0A955264245819600025233C /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		0A955266245819F20025233C /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
+		0A95526824581D910025233C /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		0A95526A24581FFF0025233C /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		0A95526C245822870025233C /* ChannelHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelHomePresenter.swift; sourceTree = "<group>"; };
+		0A95526E24582E660025233C /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
+		0A9552702458444E0025233C /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
+		0A9552732458549A0025233C /* SeriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCell.swift; sourceTree = "<group>"; };
+		0A9552742458549A0025233C /* SeriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesCell.xib; sourceTree = "<group>"; };
 		0AA91DE22428B179000C52E7 /* Channels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Channels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA91DE52428B179000C52E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AA91DE72428B179000C52E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +262,7 @@
 				0A6F8FE7243DD3FE00305C37 /* Cells */,
 				0A6F8FE3243DC3D100305C37 /* ChannelHomeViewController.swift */,
 				0A6F8FE4243DC3D100305C37 /* ChannelHomeViewController.xib */,
+				0A95526C245822870025233C /* ChannelHomePresenter.swift */,
 			);
 			path = ChannelHome;
 			sourceTree = "<group>";
@@ -245,10 +270,11 @@
 		0A6F8FE7243DD3FE00305C37 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				0A56A2732441BB38004323A8 /* Episoed cell */,
+				0A955272245854520025233C /* Series Cell */,
 				0A56A28124431433004323A8 /* Category Cell */,
 				0A56A2782441BE44004323A8 /* ChannelCell.swift */,
 				0A56A2792441BE44004323A8 /* ChannelCell.xib */,
-				0A56A2732441BB38004323A8 /* Episoed cell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -272,6 +298,37 @@
 				0A6F8FD0243C7F8400305C37 /* SplashViewController.xib */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		0A95525C2458187B0025233C /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				0A95525D245818A10025233C /* Category.Success.json */,
+				0A95525E245818A10025233C /* Channels.Success.json */,
+				0A95525F245818A10025233C /* Episodes.Success.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		0A955263245818C00025233C /* Json Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A955264245819600025233C /* NetworkResponse.swift */,
+				0A955266245819F20025233C /* ListData.swift */,
+				0A95526A24581FFF0025233C /* CategoryModel.swift */,
+				0A95526E24582E660025233C /* MediaModel.swift */,
+				0A9552702458444E0025233C /* ChannelModel.swift */,
+			);
+			path = "Json Models";
+			sourceTree = "<group>";
+		};
+		0A955272245854520025233C /* Series Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0A9552732458549A0025233C /* SeriesCell.swift */,
+				0A9552742458549A0025233C /* SeriesCell.xib */,
+			);
+			path = "Series Cell";
 			sourceTree = "<group>";
 		};
 		0AA91DD92428B179000C52E7 = {
@@ -308,6 +365,7 @@
 				0AA91E31242A35EC000C52E7 /* Extensions */,
 				0AA91E43242B462E000C52E7 /* Custom */,
 				0AA91E1E242A33C5000C52E7 /* NetworkServices */,
+				0A95525C2458187B0025233C /* Json */,
 				0AA91E28242A3524000C52E7 /* Models */,
 				0AA91E16242A3082000C52E7 /* Resources */,
 				0AA91E612430A54E000C52E7 /* Services */,
@@ -399,6 +457,7 @@
 			children = (
 				0AA91E2D242A35A5000C52E7 /* Comic.swift */,
 				0AA91E2F242A35BA000C52E7 /* MarvelResponse.swift */,
+				0A955263245818C00025233C /* Json Models */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,6 +473,7 @@
 				0AA91E3F242B41F0000C52E7 /* UIImageExtension.swift */,
 				0AA91E41242B4340000C52E7 /* NSObject+Extension.swift */,
 				0AB59410244C63DE00FAB44A /* UIViewExtension+nib.swift */,
+				0A95526824581D910025233C /* Bundle+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -639,10 +699,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A955261245818A20025233C /* Channels.Success.json in Resources */,
 				0AA91DF22428B17D000C52E7 /* LaunchScreen.storyboard in Resources */,
 				0A6F8FE6243DC3D100305C37 /* ChannelHomeViewController.xib in Resources */,
+				0A955260245818A20025233C /* Category.Success.json in Resources */,
+				0A9552762458549A0025233C /* SeriesCell.xib in Resources */,
 				0A6F8FCE243C7F8400305C37 /* SplashViewController.xib in Resources */,
 				0A56A27B2441BE44004323A8 /* ChannelCell.xib in Resources */,
+				0A955262245818A20025233C /* Episodes.Success.json in Resources */,
 				0A56A28524431FA1004323A8 /* CategoryCell.xib in Resources */,
 				0AA91E52242CA364000C52E7 /* ComicCell.xib in Resources */,
 				0AA91E39242A8DBD000C52E7 /* Colors.xcassets in Resources */,
@@ -834,24 +898,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A95526F24582E660025233C /* MediaModel.swift in Sources */,
 				0A769C802435DABC00650350 /* SplashViewController.swift in Sources */,
 				0AA91E33242A360C000C52E7 /* String+MD5.swift in Sources */,
 				0AA91E35242A361C000C52E7 /* Dictionary+Extension.swift in Sources */,
 				0AA91E30242A35BA000C52E7 /* MarvelResponse.swift in Sources */,
 				0AA91E1B242A310D000C52E7 /* Environment.swift in Sources */,
 				0AA91E40242B41F0000C52E7 /* UIImageExtension.swift in Sources */,
+				0A9552712458444E0025233C /* ChannelModel.swift in Sources */,
 				0AA91E60242CCEE9000C52E7 /* BaseViewController.swift in Sources */,
 				0AA91E20242A33FA000C52E7 /* NetworkManager.swift in Sources */,
 				0AA91E4B242CA2E9000C52E7 /* HomeViewController.swift in Sources */,
 				0AA91E3C242B4133000C52E7 /* UIViewExtension.swift in Sources */,
+				0A9552752458549A0025233C /* SeriesCell.swift in Sources */,
+				0A95526924581D910025233C /* Bundle+Extension.swift in Sources */,
 				0AA91E51242CA364000C52E7 /* ComicCell.swift in Sources */,
 				0AA91E2C242A3558000C52E7 /* NetworkManager+Marvel.swift in Sources */,
+				0A955265245819600025233C /* NetworkResponse.swift in Sources */,
 				0AA91E27242A3508000C52E7 /* NetworkManager+ParseResponse.swift in Sources */,
 				0AA91E2A242A3545000C52E7 /* MarvelService.swift in Sources */,
 				0A6F8FEA243DD6DC00305C37 /* EpisodeCell.swift in Sources */,
 				0AA91E22242A340D000C52E7 /* NetworkError.swift in Sources */,
 				0AA91E5B242CC9C7000C52E7 /* HomePresenter.swift in Sources */,
 				0A56A2802443000D004323A8 /* SectionHeader.swift in Sources */,
+				0A95526D245822870025233C /* ChannelHomePresenter.swift in Sources */,
 				0AA91E632430A569000C52E7 /* PersistenceManager.swift in Sources */,
 				0AA91E2E242A35A5000C52E7 /* Comic.swift in Sources */,
 				0AA91E58242CA4AE000C52E7 /* AppDelegate+Extension.swift in Sources */,
@@ -872,6 +942,8 @@
 				0A6F8FE1243CAA4000305C37 /* Assets.swift in Sources */,
 				0AA91E48242B4684000C52E7 /* LoaderProtocol.swift in Sources */,
 				0AA91E3E242B4165000C52E7 /* UIColor+app.swift in Sources */,
+				0A955267245819F20025233C /* ListData.swift in Sources */,
+				0A95526B24581FFF0025233C /* CategoryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

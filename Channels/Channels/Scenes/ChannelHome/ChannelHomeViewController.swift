@@ -10,10 +10,16 @@ import UIKit
 
 class ChannelHomeViewController: UIViewController {
     
+    private var homePresenter: ChannelHomePresenter?
+    var lastSection: Int?
+    
     @IBOutlet private weak var channelCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        homePresenter = ChannelHomePresenter(delegate: self)
+        lastSection = (homePresenter?.getNumberOFsections() ?? 0) - 1
         
         self.title = "Channels"
         channelCollectionView.dataSource = self
@@ -37,14 +43,15 @@ class ChannelHomeViewController: UIViewController {
 extension ChannelHomeViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return homePresenter?.getNumberOFsections() ?? 0
+        //3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch section {
-        case 2:
-            return 8
+        case lastSection:
+            return homePresenter?.getCategoriesListCount() ?? 0
         default:
             return 1
         }
@@ -53,15 +60,32 @@ extension ChannelHomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.section == 2 {
+        if indexPath.section == lastSection { // 2
             
             let  cell = channelCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.className,
                                                                   for: indexPath) as? CategoryCell
+            
+            guard let category = homePresenter?.getCategoryAtIndex(index: indexPath) else {
+                return UICollectionViewCell()
+            }
+            cell?.bind(category: category)
             return cell ?? UICollectionViewCell()
-        } else {
+            
+        } else if  indexPath.section == 0 {
+            
             let cell = channelCollectionView.dequeueReusableCell(withReuseIdentifier: ChannelCell.className,
                                                                  for: indexPath) as? ChannelCell
-            cell?.bind()
+            cell?.bindMedia(media: homePresenter?.getMedia() ?? [])
+            return cell ?? UICollectionViewCell()
+            
+        } else {
+            
+            let cell = channelCollectionView.dequeueReusableCell(withReuseIdentifier: ChannelCell.className,
+                                                                 for: indexPath) as? ChannelCell
+            guard let channel = homePresenter?.getChannelAtIndex(index: (indexPath.section - 1)) else {
+                return UICollectionViewCell()
+            }
+            cell?.bindChannel(channel: channel)
             return cell ?? UICollectionViewCell()
         }
     }
@@ -78,22 +102,28 @@ extension ChannelHomeViewController: UICollectionViewDataSource {
                                                   withReuseIdentifier: SectionHeaderTitle.className,
                                                   for: indexPath) as? SectionHeaderTitle
             headerView?.confuigureDesignWithOutSeparator()
+            headerView?.bind(title: "New Episodes")
             return headerView ?? UICollectionReusableView()
-        case 2:
+        case lastSection:
             
             let  headerView = channelCollectionView
                 .dequeueReusableSupplementaryView(ofKind: kind,
                                                   withReuseIdentifier: SectionHeaderTitle.className,
                                                   for: indexPath) as? SectionHeaderTitle
             headerView?.confuigureDesign()
+            headerView?.bind(title: "Browse By Categories")
             return headerView ?? UICollectionReusableView()
             
         default:
             let headerView = channelCollectionView
                 .dequeueReusableSupplementaryView(ofKind: kind,
                                                   withReuseIdentifier: SectionHeader.className,
-                                                  for: indexPath)
-            return headerView
+                                                  for: indexPath) as? SectionHeader
+            guard let channel = homePresenter?.getChannelAtIndex(index: (indexPath.section - 1)) else {
+                return UICollectionReusableView()
+            }
+            headerView?.bind(channel: channel)
+            return headerView ?? UICollectionReusableView()
         }
     }
 }
@@ -106,10 +136,19 @@ extension ChannelHomeViewController: UICollectionViewDelegateFlowLayout {
         
         let collectionViewSize = collectionView.frame.size.width
         
-        if indexPath.section == 2 {
+        switch indexPath.section {
+        case lastSection:
             return CGSize(width: (collectionViewSize - 30) / 2, height: 70)
-        } else {
+        case 0:
             return CGSize(width: collectionViewSize, height: 400)
+        default:
+            
+            let channel = homePresenter?.getChannelAtIndex(index: (indexPath.section - 1))
+            if channel?.series?.isEmpty ?? true {
+                return CGSize(width: collectionViewSize, height: 400)
+            } else {
+                return CGSize(width: collectionViewSize, height: 250)
+            }
         }
     }
     
@@ -118,8 +157,8 @@ extension ChannelHomeViewController: UICollectionViewDelegateFlowLayout {
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         
         switch section {
-        case 2:
-            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        case lastSection:
+            return UIEdgeInsets(top: 30, left: 10, bottom: 10, right: 10)
         default:
             return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         }
@@ -130,10 +169,17 @@ extension ChannelHomeViewController: UICollectionViewDelegateFlowLayout {
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         switch section {
-        case 0, 2:
+        case 0, lastSection:
             return CGSize(width: collectionView.frame.size.width, height: 50)
         default:
             return CGSize(width: collectionView.frame.size.width, height: 105)
         }
+    }
+}
+
+extension ChannelHomeViewController: HomeDelegate {
+    
+    func dataDecoded() {
+        channelCollectionView.reloadData()
     }
 }

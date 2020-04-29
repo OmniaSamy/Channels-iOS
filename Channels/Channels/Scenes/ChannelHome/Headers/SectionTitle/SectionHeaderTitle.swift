@@ -14,7 +14,7 @@ class SectionHeaderTitle: UICollectionReusableView {
     private var contentView: UIView!
     
     @IBOutlet private weak var separatorView: UIView!
-    
+    @IBOutlet private weak var sectionTitleLabel: UILabel!
     @IBOutlet private weak var topPin: NSLayoutConstraint!
     
     override init(frame: CGRect) {
@@ -46,5 +46,9 @@ class SectionHeaderTitle: UICollectionReusableView {
     func confuigureDesign() {
         separatorView.isHidden = false
         topPin.constant = 20
+    }
+    
+    func bind(title: String) {
+        sectionTitleLabel.text = title
     }
 }

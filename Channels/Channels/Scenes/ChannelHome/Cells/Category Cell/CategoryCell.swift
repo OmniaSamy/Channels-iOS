@@ -10,8 +10,14 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell {
     
+    @IBOutlet private weak var categoryNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func bind(category: CategoryModel) {
+        categoryNameLabel.text = category.name
     }
 }

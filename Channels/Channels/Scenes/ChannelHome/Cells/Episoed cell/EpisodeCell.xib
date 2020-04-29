@@ -12,17 +12,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="159" id="KGk-i7-Jjw" customClass="EpisodeCell" customModule="Channels" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="403"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="403"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpk-j8-KyE" userLabel="container View">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="403"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XiT-fX-myH">
-                                <rect key="frame" x="6" y="6" width="188" height="300"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XiT-fX-myH">
+                                <rect key="frame" x="6" y="4" width="188" height="300"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="VbI-lf-y8s"/>
@@ -33,21 +33,32 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title .." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6R1-Sj-RDf">
-                                <rect key="frame" x="10" y="316" width="48" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6R1-Sj-RDf">
+                                <rect key="frame" x="10" y="314" width="53" height="48"/>
+                                <string key="text">title ..
+....</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xke-dc-8Jk">
+                                <rect key="frame" x="10" y="372" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" name="Title Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="Primary Color"/>
                         <constraints>
-                            <constraint firstItem="XiT-fX-myH" firstAttribute="top" secondItem="kpk-j8-KyE" secondAttribute="top" constant="6" id="6gn-yH-CFh"/>
+                            <constraint firstAttribute="bottom" secondItem="Xke-dc-8Jk" secondAttribute="bottom" constant="10" id="1sI-xv-n6j"/>
+                            <constraint firstItem="XiT-fX-myH" firstAttribute="top" secondItem="kpk-j8-KyE" secondAttribute="top" constant="4" id="6gn-yH-CFh"/>
+                            <constraint firstItem="Xke-dc-8Jk" firstAttribute="leading" secondItem="kpk-j8-KyE" secondAttribute="leading" constant="10" id="8nW-3t-i1I"/>
                             <constraint firstAttribute="trailing" secondItem="XiT-fX-myH" secondAttribute="trailing" constant="6" id="F1c-RN-xHb"/>
+                            <constraint firstItem="Xke-dc-8Jk" firstAttribute="top" secondItem="6R1-Sj-RDf" secondAttribute="bottom" constant="10" id="OVq-dp-nR8"/>
                             <constraint firstItem="6R1-Sj-RDf" firstAttribute="leading" secondItem="kpk-j8-KyE" secondAttribute="leading" constant="10" id="RPi-PW-2c0"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6R1-Sj-RDf" secondAttribute="trailing" constant="10" id="Ze4-oj-dqN"/>
                             <constraint firstItem="XiT-fX-myH" firstAttribute="leading" secondItem="kpk-j8-KyE" secondAttribute="leading" constant="6" id="ezx-RV-Z4w"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6R1-Sj-RDf" secondAttribute="bottom" constant="10" id="ops-Rl-GQm"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xke-dc-8Jk" secondAttribute="trailing" constant="10" id="oki-w8-FiS"/>
                             <constraint firstItem="6R1-Sj-RDf" firstAttribute="top" secondItem="XiT-fX-myH" secondAttribute="bottom" constant="10" id="scf-By-cua"/>
                         </constraints>
                     </view>
@@ -60,12 +71,20 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="episodeImageView" destination="XiT-fX-myH" id="Zws-mT-Hsy"/>
+                <outlet property="titleLabel" destination="6R1-Sj-RDf" id="kca-Fz-Hjm"/>
+                <outlet property="typeLabel" destination="Xke-dc-8Jk" id="zck-fn-NQ1"/>
+            </connections>
             <point key="canvasLocation" x="152.17391304347828" y="166.07142857142856"/>
         </tableViewCell>
     </objects>
     <resources>
         <namedColor name="Primary Color">
-            <color red="0.14117647058823529" green="0.15294117647058825" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14100000262260437" green="0.15299999713897705" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Title Color">
+            <color red="0.75700002908706665" green="0.75700002908706665" blue="0.75700002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
