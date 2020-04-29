@@ -39,8 +39,18 @@ class SectionHeader: UICollectionReusableView {
     }
     
     func bind(channel: ChannelModel) {
-        sectionImageView.loadImageFromUrl(urlString: channel.iconAsset?.thumbnailUrl ?? "", placeHolderImage: nil)
+        
         sectionTitleLabel.text = channel.title
-        sectionSubTitleLabel.text = String(channel.mediaCount ?? 0)
+        
+        if channel.series?.isEmpty ?? true {
+            sectionSubTitleLabel.text = String(channel.mediaCount ?? 0) + "  " + L10n.episodes
+        } else {
+            sectionSubTitleLabel.text = String(channel.mediaCount ?? 0) + "  " + L10n.series
+        }
+        
+        guard let imageURL = channel.iconAsset?.thumbnailUrl else {
+            return
+        }
+        sectionImageView.loadImageFromUrl(urlString: imageURL, placeHolderImage: nil)
     }
 }

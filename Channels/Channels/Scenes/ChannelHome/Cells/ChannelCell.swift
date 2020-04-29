@@ -48,6 +48,7 @@ class ChannelCell: UICollectionViewCell {
 extension ChannelCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         switch cellType {
         case .media:
             return mediaList?.count ?? 0
@@ -61,10 +62,15 @@ extension ChannelCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let epiosedCell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeCell.className,
-                                                             for: indexPath) as? EpisodeCell
-        let seriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: SeriesCell.className,
-                                                            for: indexPath) as? SeriesCell
+        guard let epiosedCell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: EpisodeCell.className, for: indexPath) as? EpisodeCell else {
+                return UICollectionViewCell()
+        }
+        
+        guard let seriesCell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: SeriesCell.className, for: indexPath) as? SeriesCell else {
+                return UICollectionViewCell()
+        }
         
         switch cellType {
         case .media:
@@ -72,8 +78,8 @@ extension ChannelCell: UICollectionViewDataSource {
             guard let media = mediaList?[indexPath.row] else {
                 return UICollectionViewCell()
             }
-            epiosedCell?.bind(media: media)
-            return epiosedCell ?? UICollectionViewCell()
+            epiosedCell.bindMedia(media: media)
+            return epiosedCell
             
         case .channel:
             
@@ -83,12 +89,12 @@ extension ChannelCell: UICollectionViewDataSource {
             
             if channelModel?.series?.isEmpty ?? true {
                 
-                epiosedCell?.bindChannel(latestMedia: latestMedia)
-                return epiosedCell ?? UICollectionViewCell()
+                epiosedCell.bindChannel(latestMedia: latestMedia)
+                return epiosedCell
                 
             } else {
-                seriesCell?.bind(latestMedia: latestMedia)
-                return seriesCell ?? UICollectionViewCell()
+                seriesCell.bind(latestMedia: latestMedia)
+                return seriesCell
             }
             
         case .none:

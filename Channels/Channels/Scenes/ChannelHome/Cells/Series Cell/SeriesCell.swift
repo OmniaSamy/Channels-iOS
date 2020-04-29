@@ -9,7 +9,7 @@
 import UIKit
 
 class SeriesCell: UICollectionViewCell {
-
+    
     @IBOutlet private weak var seriesImageView: UIImageView!
     @IBOutlet private weak var seriesLabel: UILabel!
     
@@ -17,9 +17,14 @@ class SeriesCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     func bind(latestMedia: LatestMedia) {
-        seriesImageView.loadImageFromUrl(urlString: latestMedia.coverAsset?.url ?? "", placeHolderImage: nil)
+        
         seriesLabel.text = latestMedia.title
+        
+        guard let imageUrl = latestMedia.coverAsset?.url else {
+            return
+        }
+        seriesImageView.loadImageFromUrl(urlString: imageUrl, placeHolderImage: nil)
     }
 }

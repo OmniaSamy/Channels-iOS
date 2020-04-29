@@ -19,25 +19,25 @@ class EpisodeCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func bind(media: MediaModel) {
+    func bindMedia(media: MediaModel) {
+        
+        titleLabel.text = media.title
+        typeLabel.text = media.type
         
         guard let mediaURL = media.coverAsset?.url else {
             return
         }
         episodeImageView.loadImageFromUrl(urlString: mediaURL, placeHolderImage: nil)
-        
-        titleLabel.text = media.title
-        typeLabel.text = media.type
     }
     
     func bindChannel(latestMedia: LatestMedia) {
+        
+        titleLabel.text = latestMedia.title
+        typeLabel.text = latestMedia.type
         
         guard let mediaURL = latestMedia.coverAsset?.url else {
             return
         }
         episodeImageView.loadImageFromUrl(urlString: mediaURL, placeHolderImage: nil)
-        
-        titleLabel.text = latestMedia.title
-        typeLabel.text = latestMedia.type
     }
 }

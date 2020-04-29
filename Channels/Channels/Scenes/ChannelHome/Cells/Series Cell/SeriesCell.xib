@@ -12,20 +12,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SeriesCell" customModule="Channels" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="313" height="220"/>
+            <rect key="frame" x="0.0" y="0.0" width="313" height="250"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="313" height="220"/>
+                <rect key="frame" x="0.0" y="0.0" width="313" height="250"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyV-al-NMa" userLabel="Container View">
-                        <rect key="frame" x="0.0" y="0.0" width="313" height="220"/>
+                        <rect key="frame" x="0.0" y="0.0" width="313" height="250"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ou2-4p-Iep">
-                                <rect key="frame" x="10" y="10" width="293" height="150"/>
+                                <rect key="frame" x="10" y="10" width="293" height="180"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="i7N-KM-XnV"/>
+                                    <constraint firstAttribute="height" constant="180" id="i7N-KM-XnV"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornurRadius">
@@ -34,7 +34,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sM0-pY-YaZ">
-                                <rect key="frame" x="10" y="170" width="52" height="24"/>
+                                <rect key="frame" x="10" y="200" width="52" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -43,9 +43,9 @@
                         <color key="backgroundColor" name="Primary Color"/>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sM0-pY-YaZ" secondAttribute="trailing" constant="10" id="BmC-Cm-fua"/>
-                            <constraint firstAttribute="bottom" secondItem="sM0-pY-YaZ" secondAttribute="bottom" constant="26" id="EV2-Ky-Vaq"/>
                             <constraint firstItem="ou2-4p-Iep" firstAttribute="leading" secondItem="eyV-al-NMa" secondAttribute="leading" constant="10" id="Wpi-oV-RDW"/>
                             <constraint firstItem="sM0-pY-YaZ" firstAttribute="leading" secondItem="eyV-al-NMa" secondAttribute="leading" constant="10" id="fqm-gF-bHU"/>
+                            <constraint firstAttribute="bottom" secondItem="sM0-pY-YaZ" secondAttribute="bottom" constant="26" id="iga-Yr-zyH"/>
                             <constraint firstItem="sM0-pY-YaZ" firstAttribute="top" secondItem="ou2-4p-Iep" secondAttribute="bottom" constant="10" id="jY7-Qm-vi9"/>
                             <constraint firstItem="ou2-4p-Iep" firstAttribute="top" secondItem="eyV-al-NMa" secondAttribute="top" constant="10" id="noD-5j-fQE"/>
                             <constraint firstAttribute="trailing" secondItem="ou2-4p-Iep" secondAttribute="trailing" constant="10" id="uWJ-bE-DfX"/>
