@@ -59,6 +59,7 @@ class ChannelHomePresenter {
     //-------------------------------
     
     func getChannel() {
+        
         let channelList = Bundle.main.decode(NetworkResponse<ChannelList>.self,
                                              from: "Channels.Success.json")
         self.channelList = channelList.data?.channels

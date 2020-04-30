@@ -53,4 +53,9 @@ class SectionHeader: UICollectionReusableView {
         }
         sectionImageView.loadImageFromUrl(urlString: imageURL, placeHolderImage: nil)
     }
+    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        sectionImageView.image = nil
+//    }
 }

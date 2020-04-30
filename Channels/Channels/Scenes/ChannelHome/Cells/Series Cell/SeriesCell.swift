@@ -27,4 +27,9 @@ class SeriesCell: UICollectionViewCell {
         }
         seriesImageView.loadImageFromUrl(urlString: imageUrl, placeHolderImage: nil)
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        seriesImageView.image = nil
+    }
 }

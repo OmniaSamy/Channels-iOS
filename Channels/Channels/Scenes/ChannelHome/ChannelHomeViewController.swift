@@ -44,7 +44,6 @@ extension ChannelHomeViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return homePresenter?.getNumberOFsections() ?? 0
-        //3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -60,33 +59,36 @@ extension ChannelHomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.section == lastSection { // 2
+        if indexPath.section == lastSection {
             
-            let  cell = channelCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.className,
-                                                                  for: indexPath) as? CategoryCell
-            
-            guard let category = homePresenter?.getCategoryAtIndex(index: indexPath) else {
-                return UICollectionViewCell()
+            guard let  cell = channelCollectionView
+                .dequeueReusableCell(withReuseIdentifier: CategoryCell.className, for: indexPath) as? CategoryCell,
+                let category = homePresenter?.getCategoryAtIndex(index: indexPath) else {
+                    return UICollectionViewCell()
             }
-            cell?.bind(category: category)
-            return cell ?? UICollectionViewCell()
             
-        } else if  indexPath.section == 0 {
-            
-            let cell = channelCollectionView.dequeueReusableCell(withReuseIdentifier: ChannelCell.className,
-                                                                 for: indexPath) as? ChannelCell
-            cell?.bindMedia(media: homePresenter?.getMedia() ?? [])
-            return cell ?? UICollectionViewCell()
+            cell.bind(category: category)
+            return cell
             
         } else {
             
-            let cell = channelCollectionView.dequeueReusableCell(withReuseIdentifier: ChannelCell.className,
-                                                                 for: indexPath) as? ChannelCell
-            guard let channel = homePresenter?.getChannelAtIndex(index: (indexPath.section - 1)) else {
-                return UICollectionViewCell()
+            guard let cell = channelCollectionView
+                .dequeueReusableCell(withReuseIdentifier: ChannelCell.className, for: indexPath) as? ChannelCell else {
+                    return UICollectionViewCell()
             }
-            cell?.bindChannel(channel: channel)
-            return cell ?? UICollectionViewCell()
+            
+            switch indexPath.section {
+            case 0:
+                cell.bindMedia(media: homePresenter?.getMedia() ?? [])
+            default:
+                
+                guard let channel = homePresenter?.getChannelAtIndex(index: (indexPath.section - 1)) else {
+                    return UICollectionViewCell()
+                }
+                cell.bindChannel(channel: channel)
+            }
+            return cell
+            
         }
     }
     
@@ -97,33 +99,40 @@ extension ChannelHomeViewController: UICollectionViewDataSource {
         switch indexPath.section {
         case 0:
             
-            let  headerView = channelCollectionView
+            guard let  headerView = channelCollectionView
                 .dequeueReusableSupplementaryView(ofKind: kind,
                                                   withReuseIdentifier: SectionHeaderTitle.className,
-                                                  for: indexPath) as? SectionHeaderTitle
-            headerView?.confuigureDesignWithOutSeparator()
-            headerView?.bind(title: "New Episodes")
-            return headerView ?? UICollectionReusableView()
+                                                  for: indexPath) as? SectionHeaderTitle else {
+                                                    return UICollectionReusableView()
+            }
+            headerView.confuigureDesignWithOutSeparator()
+            headerView.bind(title: "New Episodes")
+            return headerView
+            
         case lastSection:
             
-            let  headerView = channelCollectionView
+            guard let  headerView = channelCollectionView
                 .dequeueReusableSupplementaryView(ofKind: kind,
                                                   withReuseIdentifier: SectionHeaderTitle.className,
-                                                  for: indexPath) as? SectionHeaderTitle
-            headerView?.confuigureDesign()
-            headerView?.bind(title: "Browse By Categories")
-            return headerView ?? UICollectionReusableView()
+                                                  for: indexPath) as? SectionHeaderTitle else {
+                                                    return UICollectionReusableView()
+            }
+            headerView.confuigureDesign()
+            headerView.bind(title: "Browse By Categories")
+            return headerView
             
         default:
-            let headerView = channelCollectionView
+            
+            guard let headerView = channelCollectionView
                 .dequeueReusableSupplementaryView(ofKind: kind,
                                                   withReuseIdentifier: SectionHeader.className,
-                                                  for: indexPath) as? SectionHeader
-            guard let channel = homePresenter?.getChannelAtIndex(index: (indexPath.section - 1)) else {
-                return UICollectionReusableView()
+                                                  for: indexPath) as? SectionHeader,
+                let channel = homePresenter?.getChannelAtIndex(index: (indexPath.section - 1)) else {
+                    return UICollectionReusableView()
             }
-            headerView?.bind(channel: channel)
-            return headerView ?? UICollectionReusableView()
+            
+            headerView.bind(channel: channel)
+            return headerView
         }
     }
 }

@@ -40,4 +40,9 @@ class EpisodeCell: UICollectionViewCell {
         }
         episodeImageView.loadImageFromUrl(urlString: mediaURL, placeHolderImage: nil)
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        episodeImageView.image = nil
+    }
 }
