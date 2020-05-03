@@ -41,6 +41,7 @@
                     <color key="backgroundColor" name="Primary Color"/>
                     <constraints>
                         <constraint firstItem="ElG-5f-yZS" firstAttribute="top" secondItem="bWA-nn-MUU" secondAttribute="top" id="7aw-LH-Enm"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gco-cm-odg" secondAttribute="trailing" constant="10" id="DE0-Fs-lrn"/>
                         <constraint firstItem="Gco-cm-odg" firstAttribute="top" secondItem="bWA-nn-MUU" secondAttribute="top" constant="20" id="Ii7-Oz-sam"/>
                         <constraint firstAttribute="bottom" secondItem="Gco-cm-odg" secondAttribute="bottom" id="NEm-8Y-PYL"/>
                         <constraint firstAttribute="trailing" secondItem="ElG-5f-yZS" secondAttribute="trailing" constant="4" id="cdN-at-Pg6"/>

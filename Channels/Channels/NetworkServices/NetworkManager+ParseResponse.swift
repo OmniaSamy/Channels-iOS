@@ -9,6 +9,7 @@
 import Foundation
 import Moya
 
+// swiftlint:disable all
 extension NetworkManager {
     
     func parseResponse<T: Codable>(moyaResult: MoyaCompletion, completion: @escaping(NetworkCompletion<T>)) {
@@ -18,8 +19,8 @@ extension NetworkManager {
             
             if (200...299 ~= response.statusCode) {
                 do {
-                    let result = try JSONDecoder().decode(MarvelResponse<T>.self, from: response.data)
-                    completion(.success(result.data), response.statusCode)
+                    let result = try JSONDecoder().decode(NetworkResponse<T>.self, from: response.data)
+                    completion(.success(result.data!), response.statusCode)
                 } catch {
                     completion(.failure(NetworkError.parseError), response.statusCode)
                 }

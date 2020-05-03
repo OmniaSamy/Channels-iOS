@@ -11,4 +11,5 @@
 
 PUBLIC_KEY = 7327619bab93782e16fe8e27168e02b6
 PRIVATE_KEY = fb3e3cee9f0560c6af23d2ec93716ad17319e2ad
-ROOT_URL = gateway.marvel.com/v1/public
+ROOT_URL = pastebin.com/raw
+//gateway.marvel.com/v1/public

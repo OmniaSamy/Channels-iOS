@@ -12,11 +12,12 @@ import Moya
 class NetworkManager {
     
     typealias MoyaCompletion = Result<Moya.Response, MoyaError>
-    typealias NetworkCompletion<T: Codable> = (_ result: Swift.Result<MarvelResults<T>, NetworkError>,
+    typealias NetworkCompletion<T: Codable> = (_ result: Swift.Result<T, NetworkError>,
         _ statusCode: Int?) -> Void
     
     static var shared: NetworkManager!
-    var marvelProvider: MoyaProvider<MarvelService>!
+        var marvelProvider: MoyaProvider<MarvelService>!
+    var homeProvider: MoyaProvider<HomeService>!
     
     let headerPlugin = StaticHeaderPlugin(
         headers: [
@@ -25,8 +26,11 @@ class NetworkManager {
     
     init() {
         NetworkManager.shared = self
-        marvelProvider = MoyaProvider<MarvelService>(session: ChannelsSessionManager.shared,
-                                                     plugins: [NetworkLoggerPlugin(), headerPlugin])
+                marvelProvider = MoyaProvider<MarvelService>(session: ChannelsSessionManager.shared,
+                                                             plugins: [NetworkLoggerPlugin(), headerPlugin])
+        
+        homeProvider = MoyaProvider<HomeService>(session: ChannelsSessionManager.shared,
+                                                 plugins: [NetworkLoggerPlugin(), headerPlugin])
     }
 }
 

@@ -114,10 +114,10 @@ extension ChannelCell: UICollectionViewDelegateFlowLayout {
         
         switch  cellType {
         case .media:
-            return CGSize(width: collectionViewSize / 2.3, height: 400)
+            return CGSize(width: collectionViewSize / 2.3, height: 403)
         case .channel:
             if channelModel?.series?.isEmpty ?? true {
-                return CGSize(width: collectionViewSize / 2.3, height: 400)
+                return CGSize(width: collectionViewSize / 2.3, height: 403)
             } else {
                 return CGSize(width: collectionViewSize / 1.1, height: 250)
             }

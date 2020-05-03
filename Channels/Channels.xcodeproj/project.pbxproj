@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A360F83245AC2CE00B13CBA /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A360F82245AC2CE00B13CBA /* HomeService.swift */; };
+		0A360F85245AC2EB00B13CBA /* NetworkManager+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A360F84245AC2EB00B13CBA /* NetworkManager+Home.swift */; };
 		0A56A27A2441BE44004323A8 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A56A2782441BE44004323A8 /* ChannelCell.swift */; };
 		0A56A27B2441BE44004323A8 /* ChannelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A56A2792441BE44004323A8 /* ChannelCell.xib */; };
 		0A56A27E2442FFFD004323A8 /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A56A27D2442FFFD004323A8 /* SectionHeader.xib */; };
@@ -96,6 +98,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A360F82245AC2CE00B13CBA /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		0A360F84245AC2EB00B13CBA /* NetworkManager+Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Home.swift"; sourceTree = "<group>"; };
 		0A56A2782441BE44004323A8 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		0A56A2792441BE44004323A8 /* ChannelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCell.xib; sourceTree = "<group>"; };
 		0A56A27D2442FFFD004323A8 /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
@@ -210,6 +214,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A360F81245AC2B400B13CBA /* Home Service */ = {
+			isa = PBXGroup;
+			children = (
+				0A360F82245AC2CE00B13CBA /* HomeService.swift */,
+				0A360F84245AC2EB00B13CBA /* NetworkManager+Home.swift */,
+			);
+			path = "Home Service";
+			sourceTree = "<group>";
+		};
 		0A56A2732441BB38004323A8 /* Episoed cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,11 +283,11 @@
 		0A6F8FE7243DD3FE00305C37 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				0A56A2782441BE44004323A8 /* ChannelCell.swift */,
+				0A56A2792441BE44004323A8 /* ChannelCell.xib */,
 				0A56A2732441BB38004323A8 /* Episoed cell */,
 				0A955272245854520025233C /* Series Cell */,
 				0A56A28124431433004323A8 /* Category Cell */,
-				0A56A2782441BE44004323A8 /* ChannelCell.swift */,
-				0A56A2792441BE44004323A8 /* ChannelCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -448,6 +461,7 @@
 			children = (
 				0AA91E29242A3545000C52E7 /* MarvelService.swift */,
 				0AA91E2B242A3558000C52E7 /* NetworkManager+Marvel.swift */,
+				0A360F81245AC2B400B13CBA /* Home Service */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -914,6 +928,7 @@
 				0A95526924581D910025233C /* Bundle+Extension.swift in Sources */,
 				0AA91E51242CA364000C52E7 /* ComicCell.swift in Sources */,
 				0AA91E2C242A3558000C52E7 /* NetworkManager+Marvel.swift in Sources */,
+				0A360F83245AC2CE00B13CBA /* HomeService.swift in Sources */,
 				0A955265245819600025233C /* NetworkResponse.swift in Sources */,
 				0AA91E27242A3508000C52E7 /* NetworkManager+ParseResponse.swift in Sources */,
 				0AA91E2A242A3545000C52E7 /* MarvelService.swift in Sources */,
@@ -926,6 +941,7 @@
 				0AA91E2E242A35A5000C52E7 /* Comic.swift in Sources */,
 				0AA91E58242CA4AE000C52E7 /* AppDelegate+Extension.swift in Sources */,
 				0AA91E24242A3433000C52E7 /* ChannelsSessionManager.swift in Sources */,
+				0A360F85245AC2EB00B13CBA /* NetworkManager+Home.swift in Sources */,
 				0AA91E46242B4651000C52E7 /* Loader.swift in Sources */,
 				0A56A28424431FA1004323A8 /* CategoryCell.swift in Sources */,
 				0AA91E42242B4340000C52E7 /* NSObject+Extension.swift in Sources */,

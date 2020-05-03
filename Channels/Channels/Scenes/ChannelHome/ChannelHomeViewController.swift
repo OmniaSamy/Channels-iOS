@@ -8,18 +8,19 @@
 
 import UIKit
 
-class ChannelHomeViewController: UIViewController {
+class ChannelHomeViewController: BaseViewController {
     
     private var homePresenter: ChannelHomePresenter?
-    var lastSection: Int?
+    var lastSection = 0
     
     @IBOutlet private weak var channelCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.showLoader(view: self.view, type: .custom)
         homePresenter = ChannelHomePresenter(delegate: self)
-        lastSection = (homePresenter?.getNumberOFsections() ?? 0) - 1
+        //        lastSection = (homePresenter?.getNumberOFsections() ?? 0) - 1
         
         self.title = "Channels"
         channelCollectionView.dataSource = self
@@ -46,7 +47,8 @@ extension ChannelHomeViewController: UICollectionViewDataSource {
         return homePresenter?.getNumberOFsections() ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         
         switch section {
         case lastSection:
@@ -78,8 +80,10 @@ extension ChannelHomeViewController: UICollectionViewDataSource {
             }
             
             switch indexPath.section {
+                
             case 0:
-                cell.bindMedia(media: homePresenter?.getMedia() ?? [])
+                cell.bindMedia(media: homePresenter?.getMediaList() ?? [])
+                
             default:
                 
                 guard let channel = homePresenter?.getChannelAtIndex(index: (indexPath.section - 1)) else {
@@ -97,9 +101,10 @@ extension ChannelHomeViewController: UICollectionViewDataSource {
                         at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch indexPath.section {
+            
         case 0:
             
-            guard let  headerView = channelCollectionView
+            guard let headerView = channelCollectionView
                 .dequeueReusableSupplementaryView(ofKind: kind,
                                                   withReuseIdentifier: SectionHeaderTitle.className,
                                                   for: indexPath) as? SectionHeaderTitle else {
@@ -111,7 +116,7 @@ extension ChannelHomeViewController: UICollectionViewDataSource {
             
         case lastSection:
             
-            guard let  headerView = channelCollectionView
+            guard let headerView = channelCollectionView
                 .dequeueReusableSupplementaryView(ofKind: kind,
                                                   withReuseIdentifier: SectionHeaderTitle.className,
                                                   for: indexPath) as? SectionHeaderTitle else {
@@ -149,12 +154,12 @@ extension ChannelHomeViewController: UICollectionViewDelegateFlowLayout {
         case lastSection:
             return CGSize(width: (collectionViewSize - 30) / 2, height: 70)
         case 0:
-            return CGSize(width: collectionViewSize, height: 400)
+            return CGSize(width: collectionViewSize, height: 403)
         default:
             
             let channel = homePresenter?.getChannelAtIndex(index: (indexPath.section - 1))
             if channel?.series?.isEmpty ?? true {
-                return CGSize(width: collectionViewSize, height: 400)
+                return CGSize(width: collectionViewSize, height: 403)
             } else {
                 return CGSize(width: collectionViewSize, height: 250)
             }
@@ -188,7 +193,14 @@ extension ChannelHomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension ChannelHomeViewController: HomeDelegate {
     
-    func dataDecoded() {
+    func fetchCategoriesSucess() {
+        self.hideLoader()
+        lastSection = (homePresenter?.getNumberOFsections() ?? 0) - 1
         channelCollectionView.reloadData()
+    }
+    
+    func fetchFail(error: NetworkError) {
+        self.hideLoader()
+        self.showErrorMessage(errorMessage: error.message ?? "")
     }
 }

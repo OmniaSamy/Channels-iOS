@@ -9,5 +9,6 @@
 #ifndef Bridging_h
 #define Bridging_h
 
+#import "MBProgressHUD.h"
 
 #endif /* Bridging_h */

@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.0.2)
   - AlamofireImage (4.0.2):
     - Alamofire (< 6.0.0, >= 5.0.2)
+  - MBProgressHUD (1.2.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage
+  - MBProgressHUD
   - Moya
   - SwiftMessages
 
@@ -19,15 +21,17 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - MBProgressHUD
     - Moya
     - SwiftMessages
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
   AlamofireImage: ca7325440303d041a80b7caa55066ba945522378
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   SwiftMessages: b577dc7043be8b299857ab35bb663dbff6483bd0
 
-PODFILE CHECKSUM: a4982f0df5a6e2beacaa909209bda8b7d7818a54
+PODFILE CHECKSUM: fc04f18349209958bd884e5efa3f118e925d92fe
 
 COCOAPODS: 1.8.4

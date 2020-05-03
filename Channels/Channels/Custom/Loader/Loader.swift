@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class Loader: NSObject {
     
     static var sharedViewSpinner: UIView?
     static let image = UIImage()
+    static var onView = UIView()
     
     class func show (onView: UIView, type: LoaderType) {
         
+        self.onView = onView
         if sharedViewSpinner != nil {
             sharedViewSpinner?.removeFromSuperview()
         }
@@ -25,9 +28,16 @@ class Loader: NSObject {
         
         switch type {
         case .custom:
-            let activityIndicator = UIImageView(image: image)
-            activityIndicator.center = viewBackgroundLoading.center
-            viewBackgroundLoading.addSubview(activityIndicator)
+            //            let activityIndicator = UIImageView(image: image)
+            //            activityIndicator.center = viewBackgroundLoading.center
+            //            viewBackgroundLoading.addSubview(activityIndicator)
+            
+            let hud = MBProgressHUD.showAdded(to: onView, animated: true)
+            hud.backgroundView.style = MBProgressHUDBackgroundStyle.solidColor
+            hud.backgroundView.color = UIColor.black.withAlphaComponent(0.3)
+            hud.bezelView.backgroundColor = UIColor.green
+            hud.contentColor = UIColor.black
+            hud.mode = MBProgressHUDMode.indeterminate
             
         case .native:
             let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
@@ -35,22 +45,26 @@ class Loader: NSObject {
             activityIndicator.startAnimating()
             activityIndicator.center = viewBackgroundLoading.center
             viewBackgroundLoading.addSubview(activityIndicator)
+            
+            viewBackgroundLoading.center = spinnerView.center
+            viewBackgroundLoading.backgroundColor = UIColor.white
+            viewBackgroundLoading.alpha = 0.5
+            viewBackgroundLoading.clipsToBounds = true
+            viewBackgroundLoading.layer.cornerRadius = 15
+            
+            spinnerView.addSubview(viewBackgroundLoading)
+            onView.addSubview(spinnerView)
+            
+            sharedViewSpinner = spinnerView
         }
-        
-        viewBackgroundLoading.center = spinnerView.center
-        viewBackgroundLoading.backgroundColor = UIColor.white
-        viewBackgroundLoading.alpha = 0.5
-        viewBackgroundLoading.clipsToBounds = true
-        viewBackgroundLoading.layer.cornerRadius = 15
-        
-        spinnerView.addSubview(viewBackgroundLoading)
-        onView.addSubview(spinnerView)
-        
-        sharedViewSpinner = spinnerView
     }
     
     class func hide() {
+        
+        // native
         sharedViewSpinner?.removeFromSuperview()
         sharedViewSpinner = nil
+        // custom
+        MBProgressHUD.hide(for: onView, animated: true)
     }
 }
